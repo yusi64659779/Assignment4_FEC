@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+
+<div>
+    <h2>Welcome to Federal Election Commission</h2>
+
+    <p class="lead text-muted">The Federal Election Commission (FEC) is the independent regulatory agency to protect the integrity of the federal campaign finance process by providing transparency and fairly enforcing and administering federal campaign finance laws.</p>
+</div>
+
+
+
+
+<p>
+    FEC application lets you fetch data from Federal Election Commission via their public <a href="https://api.open.fec.gov/developers/#/" target="_blank">API</a>.
+    <br />
+    <br />
+    In order to use FEC application, all you need to do is get the API key from this <a href="https://api.data.gov/signup/" target="_blank">page</a>. Signup using your usf mail, the api key will be sent to you through email. Copy the key and paste it on line no 32 in HomeController.cs and re run the application.
+    <br />
+    <br />
+    The tab fetches FEC data from the
+    <a href="https://www.fec.gov/updates/sale-or-use-contributor-information/">Federal Election Commission </a> and displays the results.
+    <br />
+    <br />
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>
+                <a asp-controller="Home" asp-action="Candidates">Look up Candidates</a>
+            </td>
+            <td>
+                <a asp-controller="Home" asp-action="Committees">Explore Committee Profile</a>
+            </td>
+            <td>
+                <a asp-controller="Home" asp-action="Filings">Discover Filings</a>
+            </td>
+        </tr>
+    </thead>
+</table>
+
+
+

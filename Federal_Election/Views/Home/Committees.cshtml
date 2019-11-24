@@ -1,0 +1,128 @@
+﻿@model Federal_Election.Models.Committees
+
+<h1>Committees</h1>
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Committee ID
+            </th>
+            <th>
+                Affiliated Committee Name
+            </th>
+            <th>
+                Committee Type
+            </th>
+            <th>
+                Committee Type Full
+            </th>
+            <th>
+                Designation
+            </th>
+            <th>
+                Designation Full
+            </th>
+            <th>
+                Filing Frequency
+            </th>
+            <th>
+                First File Date
+            </th>
+            <th>
+                Last F1 Date
+            </th>
+            <th>
+                Last File Date
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Organization Type
+            </th>
+            <th>
+                Organization Type Full
+            </th>
+            <th>
+                Party
+            </th>
+            <th>
+                Party Full
+            </th>
+            <th>
+                State
+            </th>
+            <th>
+                Treasurer Name
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.results)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.committee_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.affiliated_committee_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.committee_type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.committee_type_full)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.designation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.designation_full)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.filing_frequency)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.first_file_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.last_f1_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.last_file_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.organization_type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.organization_type_full)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.party)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.party_full)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.state)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.treasurer_name)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    alertDbSave(@ViewBag.dbSuccessComp);
+</script>
+<div>
+    <a id="dbopt" asp-controller="Home" asp-action="PopulateCommittees"><button type="button">Save</button></a>
+</div>

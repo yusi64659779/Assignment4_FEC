@@ -1,0 +1,115 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+}
+
+<section class="jumbotron text-center bg-white">
+    <div class="container">
+        <h1 class="jumbotron-heading">@ViewData["Title"]</h1>
+        <p class="lead text-muted">Developers are DIS Group 7 from Prof. Daniel Clinton's Class of Distributed Information Systems at USF.</p>
+        <p>
+            <a class="btn btn-primary my-2" href="#more">Learn more about FEC</a>
+            <a class="btn btn-secondary my-2" href="https://github.com/munjasolanke/Assignment_2" target="_blank">GitHub</a>
+        </p>
+    </div>
+</section>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <img class="rounded-circle" src="~/images/Munja.jpg" alt="Generic placeholder image" width="140" height="140">
+                <h2>Munja Solanke</h2>
+                <p>Graduate Student at University of South Florida | Business Analytics | Business Intelligence</p>
+            </th>
+            <th>
+                <img class="rounded-circle" src="~/images/Nivedita.jpg" alt="Generic placeholder image" width="140" height="140">
+                <h2>Nivedita Mangal</h2>
+                <p>Graduate Student at University of South Florida | Business Analytics | Business Intelligence</p>
+            </th>
+            <th>
+                <img class="rounded-circle" src="~/images/Yusi.jpg" alt="Generic placeholder image" width="140" height="140">
+                <h2>Yusi Wei</h2>
+                <p>Graduate Student at University of South Florida | Business Analytics | Business Intelligence</p>
+            </th>
+        </tr>
+    </thead>
+</table>
+
+    <div class="row">
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <div id="chartContainer1" style="width: 31%; height: 160px;display: inline-block;"></div>
+        <div id="chartContainer2" style="width: 32%; height: 160px;display: inline-block;"></div>
+        <div id="chartContainer3" style="width: 31%; height: 160px;display: inline-block;"></div>
+        <script>
+            var chart = new CanvasJS.Chart("chartContainer1",
+                {
+                    animationEnabled: true,
+                    title: {
+                        text: "Munja's Contribution",
+                    },
+                    data: [
+                        {
+                            type: "pie",
+                            showInLegend: true,
+                            indexLabel: "{label} - #percent%",
+                            toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+                            dataPoints: [
+                                { y: 30, label: "API Use", color: "rgb(30,144,255)" },
+                                { y: 35, label: "Database Design", color: "rgb(65,105,225)" },
+                                { y: 37, label: "View Design", color: "rgb(0,0,128)" },
+                            ]
+                        },
+                    ]
+                });
+            chart.render();
+
+            var chart = new CanvasJS.Chart("chartContainer2",
+                {
+                    animationEnabled: true,
+                    title: {
+                        text: "Nivedita's Contribution",
+                    },
+                    data: [
+                        {
+                            type: "doughnut",
+                            startAngle: 60,
+                            indexLabelFontSize: 10,
+                            indexLabel: "{label} - #percent%",
+                            toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+                            dataPoints: [
+                                { y: 49, label: "API Use", color: "rgb(173,216,230)" },
+                                { y: 30, label: "Database Design", color: "rgb(65,105,225)" },
+                                { y: 21, label: "View Design", color: "rgb(100,149,237)" },
+                            ]
+                        },
+                    ]
+                });
+            chart.render();
+
+            var chart = new CanvasJS.Chart("chartContainer3",
+                {
+                    animationEnabled: true,
+                    title: {
+                        text: "Yusi's Contribution",
+                    },
+                    axisY: {
+                        title: "Percentile"
+                    },
+                    data: [
+                        {
+                            type: "column",
+                            showInLegend: true,
+                            legendText: "Yusi",
+                            dataPoints: [
+                                { y: 21, label: "API Use", color: "rgb(135,206,250)" },
+                                { y: 35, label: "Database Design", color: "rgb(0,191,255)" },
+                                { y: 42, label: "View Design", color: "rgb(100,149,237)" },
+                            ]
+                        },
+                    ]
+                });
+            chart.render();
+        </script>
+    </div>
+</div>

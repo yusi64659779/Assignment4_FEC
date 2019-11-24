@@ -1,0 +1,205 @@
+﻿@model Federal_Election.Models.Filings
+
+<h1>Filings</h1>
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Committee ID
+            </th>
+            <th>
+                Candidate Name
+            </th>
+            <th>
+                Committee Type
+            </th>
+            <th>
+                Amendment Indicator
+            </th>
+            <th>
+                Cash on Hand Beginning Period
+            </th>
+            <th>
+                Cash on Hand End Period
+            </th>
+            <th>
+                FEC URL
+            </th>
+            <th>
+                CSV URL
+            </th>
+            <th>
+                Total Disbursements
+            </th>
+            <th>
+                Cycle
+            </th>
+            <th>
+                Beginning Image Number
+            </th>
+            <th>
+                Office
+            </th>
+            <th>
+                Debts Owed by Committee
+            </th>
+            <th>
+                Form Type
+            </th>
+            <th>
+                Document Description
+            </th>
+            <th>
+                File Number
+            </th>
+            <th>
+                Means Filed
+            </th>
+            <th>
+                Most Recent
+            </th>
+            <th>
+                Update Date
+            </th>
+            <th>
+                SUB ID
+            </th>
+            <th>
+                PDF URL
+            </th>
+            <th>
+                Form Category
+            </th>
+            <th>
+                Report Year
+            </th>
+            <th>
+                Coverage End Date
+            </th>
+            <th>
+                FEC File ID
+            </th>
+            <th>
+                Primary General Indicator
+            </th>
+            <th>
+                Report Type Full
+            </th>
+            <th>
+                Coverage Start Date
+            </th>
+            <th>
+                Debts Owed to Committee
+            </th>
+            <th>
+                Report Type
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.results)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.committee_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.committee_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.committee_type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.amendment_indicator)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cash_on_hand_beginning_period)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cash_on_hand_end_period)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fec_url)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.csv_url)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.total_disbursements)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cycle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.beginning_image_number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.office)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.debts_owed_by_committee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.form_type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.document_description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.file_number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.means_filed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.most_recent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.update_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sub_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pdf_url)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.form_category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.report_year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.coverage_end_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fec_file_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.primary_general_indicator)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.report_type_full)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.coverage_start_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.debts_owed_to_committee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.report_type)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    alertDbSave(@ViewBag.dbSuccessComp);
+</script>
+<div>
+    <a id="dbopt" asp-controller="Home" asp-action="PopulateFilings"><button type="button">Save</button></a>
+</div>

@@ -1,0 +1,194 @@
+﻿@model Federal_Election.Models.Candidates
+
+<h1>Candidates</h1>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Candidate ID
+            </th>
+
+            <th>
+                Candidate Inactive
+            </th>
+
+            <th>
+                Candidate Status
+            </th>
+
+            <th>
+                Active Through
+            </th>
+
+            <th>
+                District
+            </th>
+
+            <th>
+                District Number
+            </th>
+
+            <th>
+                Federal Funds Flag
+            </th>
+
+            <th>
+                First File Date
+            </th>
+
+            <th>
+                Flags
+            </th>
+
+            <th>
+                Has Raised Funds
+            </th>
+
+            <th>
+                Incumbent Challenge
+            </th>
+
+            <th>
+                Incumbent Challenge Full
+            </th>
+
+            <th>
+                Last F2 Date
+            </th>
+
+            <th>
+                Last File Date
+            </th>
+
+            <th>
+                Load Date
+            </th>
+
+            <th>
+                Name
+            </th>
+
+            <th>
+                Office
+            </th>
+
+            <th>
+                Office Full
+            </th>
+
+            <th>
+                Party
+            </th>
+
+            <th>
+                Party Full
+            </th>
+
+            <th>
+                State
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.results)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.candidate_id)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.candidate_inactive)
+                </td>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.candidate_status)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.active_through)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.district)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.district_number)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.federal_funds_flag)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.first_file_date)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.flags)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.has_raised_funds)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.incumbent_challenge)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.incumbent_challenge_full)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.last_f2_date)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.last_file_date)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.load_date)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.office)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.office_full)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.party)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.party_full)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.state)
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+
+<script>
+    alertDbSave(@ViewBag.dbSuccessComp);
+</script>
+<div>
+    <a id="dbopt" asp-controller="Home" asp-action="PopulateCandidates"><button type="button">Save</button></a>
+    
+</div>
